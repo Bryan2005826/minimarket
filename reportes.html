@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reportes - MiniMarket Las Palmeras</title>
+  <link rel="stylesheet" href="reportes.css" />
+  <!-- Librería para generar PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <div>
+          <h1>MiniMarket Manager</h1>
+          <span>Reportes y Análisis</span>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar en reportes..." />
+      </div>
+
+      <div class="header-actions">
+        
+        <div class="user-role">👤 <span id="user-role-display">Administrador</span></div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">← Volver</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="filters-card">
+        <h3 class="filters-title">📊 Configuración del Reporte</h3>
+        <div class="filters">
+          <div class="filter-group">
+            <label>Tipo de Reporte</label>
+            <select id="report-type">
+              <option>Ventas Diarias</option>
+              <option>Ventas por Producto</option>
+              <option>Inventario</option>
+              <option>Compras por Proveedor</option>
+              <option>Ganancias</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Fecha Inicio</label>
+            <input type="date" id="start-date" />
+          </div>
+          <div class="filter-group">
+            <label>Fecha Fin</label>
+            <input type="date" id="end-date" />
+          </div>
+          <div class="filter-group">
+            <button class="btn btn-primary" id="generate-report">
+              <span class="btn-icon">🔍</span>
+              <span>Generar Reporte</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-container">
+        <div class="report-header">
+          <h2 id="report-title">Seleccione un tipo de reporte y fechas</h2>
+          <div class="report-actions" id="report-actions" style="display: none;">
+            <button class="btn btn-pdf" id="export-pdf">
+              <span class="btn-icon">📄</span>
+              <span>Exportar a PDF</span>
+            </button>
+            <button class="btn btn-print" id="print-report">
+              <span class="btn-icon">🖨️</span>
+              <span>Imprimir</span>
+            </button>
+          </div>
+        </div>
+        <div id="report-content" class="report-content"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="reportes.js"></script>
+</body>
+</html>

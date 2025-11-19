@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - MiniMarket Las Palmeras</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <h1>MiniMarket<br /><strong>Las Palmeras</strong></h1>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar productos por nombre, código o categoría..." />
+        <button class="search-btn">🔍</button>
+      </div>
+
+      <div class="header-right">
+        
+        <div class="user-info">
+          <span id="user-name">Usuario</span>
+          <button class="btn-logout" onclick="cerrarSesion()">✖ Cerrar Sesión</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Bienvenida -->
+      <div class="welcome-section">
+        <h2 id="welcome-title">Bienvenido, <span id="user-role">Rol</span></h2>
+        <p id="role-description">Acceso al sistema según tu rol.</p>
+      </div>
+
+      <!-- Módulos disponibles según rol -->
+      <div class="modules-grid">
+        <!-- Módulo: Ventas (todos los roles) -->
+        <div class="module-card" id="module-ventas">
+          <div class="module-icon">💰</div>
+          <h3>Registrar Ventas</h3>
+          <p>Gestiona las ventas diarias del minimarket.</p>
+          <a href="ventas.html" class="btn-module">Ir a Ventas</a>
+        </div>
+
+        <!-- Módulo: Gestión de Productos (supervisor y admin) -->
+        <div class="module-card" id="module-productos" style="display: none;">
+          <div class="module-icon">📦</div>
+          <h3>Gestión de Productos</h3>
+          <p>Agrega, edita o elimina productos del inventario.</p>
+          <a href="productos.html" class="btn-module">Ir a Productos</a>
+        </div>
+
+        <!-- Módulo: Registro de Compras (supervisor y admin) -->
+        <div class="module-card" id="module-compras" style="display: none;">
+          <div class="module-icon">📥</div>
+          <h3>Registro de Compras</h3>
+          <p>Registra las compras a proveedores y actualiza el inventario.</p>
+          <a href="compras.html" class="btn-module">Ir a Compras</a>
+        </div>
+
+        <!-- Módulo: Proveedores (admin) -->
+        <div class="module-card" id="module-proveedores" style="display: none;">
+          <div class="module-icon">🚚</div>
+          <h3>Gestión de Proveedores</h3>
+          <p>Registra y gestiona la información de tus proveedores.</p>
+          <a href="proveedores.html" class="btn-module">Ir a Proveedores</a>
+        </div>
+
+        <!-- Módulo: Reportes (supervisor y admin) -->
+        <div class="module-card" id="module-reportes" style="display: none;">
+          <div class="module-icon">📊</div>
+          <h3>Reportes y Análisis</h3>
+          <p>Genera reportes de ventas, stock y ganancias.</p>
+          <a href="reportes.html" class="btn-module">Ver Reportes</a>
+        </div>
+
+        <!-- Módulo: Gestión de Usuarios (solo admin) -->
+        <div class="module-card" id="module-usuarios" style="display: none;">
+          <div class="module-icon">👥</div>
+          <h3>Gestión de Usuarios</h3>
+          <p>Crea y gestiona cuentas de administradores y cajeros.</p>
+          <a href="usuarios.html" class="btn-module">Gestionar Usuarios</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

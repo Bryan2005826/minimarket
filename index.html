@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MiniMarket Las Palmeras</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5b 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .logo span {
+      color: #ff6b35;
+      font-weight: bold;
+    }
+    .btn-role {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      margin: 12px 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      min-height: 65px;
+    }
+    .btn-role.cajero { background: #e3f2fd; color: #0d47a1; }
+    .btn-role.supervisor { background: #fff8e1; color: #5d4037; }
+    .btn-role.admin { background: #e8f5e9; color: #1b5e20; }
+    .btn-role:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">MiniMarket <span>Las Palmeras</span></div>
+    <p style="margin-bottom: 20px; color: #555;">Seleccione su rol para continuar</p>
+
+    <button class="btn-role cajero" onclick="selectRole('cajero')">🧮 Cajero</button>
+    <button class="btn-role supervisor" onclick="selectRole('supervisor')">👥 Supervisor</button>
+    <button class="btn-role admin" onclick="selectRole('administrador')">🛡️ Administrador</button>
+  </div>
+
+  <script>
+    function selectRole(role) {
+      localStorage.setItem("selectedRole", role);
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

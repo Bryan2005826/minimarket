@@ -1,0 +1,67 @@
+:root {
+  --primary: #ff6b35;
+  --primary-dark: #e05a2b;
+  --light: #fff;
+  --gray: #f0f0f0;
+  --dark: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, #ff8c5b 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  margin-bottom: 2rem;
+}
+
+.logo-icon {
+  background: var(--primary);
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 6px 14px rgba(255, 107, 53, 0.4);
+}
+
+.logo h1 {
+  font-size: 2rem;
+  color: var(--dark);
+}
+
+.logo strong {
+  background: linear-gradient(135deg, var(--primary) 0%, #ff8c5b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}

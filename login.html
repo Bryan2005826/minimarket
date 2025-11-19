@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión - MiniMarket</title>
+ <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">🛒</div>
+      <h1>MiniMarket<br /><strong>Las Palmeras</strong></h1>
+    </div>
+
+    <form id="loginForm">
+      <h2 id="title">Iniciar Sesión</h2>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Correo electrónico" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Contraseña" required minlength="6" />
+      </div>
+      <div id="msg" class="msg"></div>
+      <button type="submit" class="btn-login">Iniciar Sesión</button>
+      <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">
+        ← Cambiar Rol
+      </button>
+    </form>
+
+  </div>
+
+  <script src="login.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

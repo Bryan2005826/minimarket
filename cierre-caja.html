@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cierre de Caja - MiniMarket Las Palmeras</title>
+  <link rel="stylesheet" href="cierre-caja.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <div>
+          <h1>MiniMarket Manager</h1>
+          <span>Cierre de Caja</span>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar en cierre..." />
+      </div>
+
+      <div class="header-actions">
+        <div class="cart-badge">🛒<span class="cart-count">0</span></div>
+        <div class="user-role">👤 <span id="user-role-display">Cajero</span></div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">← Volver</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="summary-cards">
+        <div class="card">
+          <h3>Ventas Totales</h3>
+          <div class="value" id="total-sales">0</div>
+        </div>
+        <div class="card">
+          <h3>Efectivo</h3>
+          <div class="value" id="total-cash">$0.00</div>
+        </div>
+        <div class="card">
+          <h3>Transferencia</h3>
+          <div class="value" id="total-transfer">$0.00</div>
+        </div>
+        <div class="card total">
+          <h3>Total del Día</h3>
+          <div class="value" id="total-day">$0.00</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="close-cash-btn">✅ Confirmar Cierre de Caja</button>
+      </div>
+
+      <div class="details">
+        <h3>Detalles del Cierre</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>HORA</th>
+              <th>PRODUCTO</th>
+              <th>CANTIDAD</th>
+              <th>MÉTODO</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody id="closure-details">
+            <!-- Se llenará dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+<!-- Agregar en <head> o antes de </body> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="cierre-caja.js"></script>
+</body>
+</html>

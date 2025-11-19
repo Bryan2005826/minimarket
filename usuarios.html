@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Usuarios - MiniMarket Las Palmeras</title>
+  <link rel="stylesheet" href="usuarios.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <div>
+          <h1>MiniMarket Manager</h1>
+          <span>Gestión de Usuarios</span>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar por nombre o correo..." />
+      </div>
+
+      <div class="header-actions">
+        
+        <div class="user-role">👤 <span id="user-role-display">Administrador</span></div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">← Volver</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="panel-header">
+        <h2>Gestión de Usuarios</h2>
+        <button class="btn btn-primary" id="add-user-btn">➕ Nuevo Usuario</button>
+      </div>
+
+      <div class="table-controls">
+        <div>
+          <label><input type="checkbox" id="select-all" /> Seleccionar todo</label>
+        </div>
+        <div>
+          <select id="role-filter">
+            <option value="">Todos los roles</option>
+            <option value="administrador">Administrador</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="cajero">Cajero</option>
+          </select>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>NOMBRE</th>
+            <th>CORREO</th>
+            <th>ROL</th>
+            <th>ÚLTIMO INGRESO</th>
+            <th>ESTADO</th>
+            <th>ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody id="users-table-body">
+          <!-- Se llenará dinámicamente -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="usuarios.js"></script>
+</body>
+</html>

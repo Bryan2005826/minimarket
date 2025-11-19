@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Productos - MiniMarket Las Palmeras</title>
+  <link rel="stylesheet" href="productos.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <div>
+          <h1>MiniMarket Manager</h1>
+          <span>Gestión de Productos</span>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar por nombre, código o categoría..." />
+      </div>
+
+      <div class="header-actions">
+        
+        <div class="user-role">👤 <span id="user-role-display">Supervisor</span></div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">← Volver</button>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+      <!-- Sidebar de filtros -->
+      <aside class="sidebar">
+        <h3>Categorías</h3>
+        <ul id="category-filters">
+          <!-- Se llenará dinámicamente -->
+        </ul>
+        <div class="filter-section">
+          <h4>Estado</h4>
+          <ul id="status-filters">
+            <li data-status="all" class="active">Todas</li>
+            <li data-status="en-stock">En Stock</li>
+            <li data-status="stock-bajo">Stock Bajo</li>
+            <li data-status="agotado">Agotado</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Panel de Productos -->
+      <div class="main-panel">
+        <div class="panel-header">
+          <h2>Gestión de Productos</h2>
+          <button class="btn btn-primary" id="add-product-btn">➕ Nuevo Producto</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>PRODUCTO</th>
+              <th>CÓDIGO</th>
+              <th>CATEGORÍA</th>
+              <th>PRECIO (COP)</th>
+              <th>STOCK</th>
+              <th>ESTADO</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body">
+            <!-- Se llenará dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal: Nuevo/Editar Producto -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Nuevo Producto</h3>
+        <span class="close" id="close-modal">&times;</span>
+      </div>
+      <form id="product-form">
+        <div class="form-group">
+          <label>Nombre *</label>
+          <input type="text" id="product-name" required />
+        </div>
+        <div class="form-group">
+          <label>Código de Barras *</label>
+          <input type="text" id="product-barcode" required />
+        </div>
+        <div class="form-group">
+          <label>Categoría *</label>
+          <input type="text" id="product-category" placeholder="Ej: Lácteos" required />
+        </div>
+        <div class="form-group">
+          <label>Precio (COP) *</label>
+          <input type="number" id="product-price" min="0" step="100" required />
+        </div>
+        <div class="form-group">
+          <label>Stock *</label>
+          <input type="number" id="product-stock" min="0" required />
+        </div>
+        <div id="modal-message" class="message"></div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notificación -->
+  <div id="notification" class="notification">
+    <span id="notification-message">Producto actualizado</span>
+  </div>
+
+  <script src="productos.js"></script>
+</body>
+</html>

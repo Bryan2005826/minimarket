@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ventas - MiniMarket Las Palmeras</title>
+  <link rel="stylesheet" href="ventas.css" />
+  <style>
+    /* Tu CSS original queda exactamente igual */
+    /* ... (todo el CSS que ya tenías) ... */
+    
+    /* Solo quitamos el bloque de Horario del sidebar en el HTML más abajo */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header (sin cambios) -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <div>
+          <h1>MiniMarket Manager</h1>
+          <span>Registro de Ventas</span>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar producto por nombre, código o categoría..." />
+      </div>
+     <div class="header-actions">
+        
+        <div class="user-role">👤 <span id="user-role-display">Administrador</span></div>
+        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">← Volver</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- Sidebar SIN HORARIO -->
+      <aside class="sidebar">
+        <h3>Filtros</h3>
+        <div class="filter-section">
+          <h4>Estado</h4>
+          <ul>
+            <li>Todas <span class="count">0</span></li>
+            <li>efectivo <span class="count">0</span></li>
+            <li>transferencia  <span class="count">0</span></li>
+          </ul>
+        </div>
+        
+        <!-- Horario eliminado -->
+      </aside>
+
+      <!-- Main panel (sin cambios visuales) -->
+      <main class="main-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Ventas del Día</h2>
+          <div class="actions">
+            <button class="btn btn-primary" id="new-sale-btn">+ Nueva Venta</button>
+            <button class="btn btn-secondary" onclick="window.location.href='cierre-caja.html'">Cierre de Caja</button>
+          </div>
+        </div>
+
+        <div class="table-controls">
+          <div><label><input type="checkbox" id="select-all" /> Seleccionar todo</label></div>
+          <div>
+            <select id="items-per-page">
+              <option>20 por página</option>
+              <option>50 por página</option>
+            </select>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>PRODUCTO</th>
+              <th>CANTIDAD</th>
+              <th>PRECIO UNIT.</th>
+              <th>TOTAL</th>
+              <th>PAGO</th>
+              <th>ESTADO</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody id="sales-table-body"></tbody>
+        </table>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal Nueva Venta -->
+  <div id="sale-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Nueva Venta</h3>
+        <span class="close" id="close-modal">×</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Producto *</label>
+          <select id="sale-product" required>
+            <option value="">Cargando productos...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cantidad *</label>
+          <input type="number" id="sale-quantity" min="1" value="1" required />
+        </div>
+        <div class="form-group">
+          <label>Método de Pago *</label>
+          <select id="sale-payment" required>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Total: $<span id="sale-total">0</span></label>
+        </div>
+        <div id="sale-message" class="message error"></div>
+        <div style="display:flex; gap:10px; margin-top:20px;">
+          <button class="btn btn-primary" id="confirm-sale">Vender</button>
+          <button class="btn btn-secondary" id="cancel-sale">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="ventas.js"></script>
+</body>
+</html>
